@@ -187,7 +187,7 @@
   ```
 - fstab entry for CIFS 
   ``` 
-  //awfsinf02pv/FileEncrypt/CompassAnalytics /home/rpmadmin/mount cifs rw,vers=3.0,sec=ntlm,cache=strict,username=fencrypt,domain=ROUNDPOINT,password=MboS1603*,uid=0,noforceuid,gid=0,noforcegid,addr=10.140.4.22,file_mode=0777,dir_mode=0777,nounix,serverino,mapposix,rsize=61440,wsize=65536,echo_interval=60,actimeo=1 0 0
+  //awfsinf02pv/FileEncrypt/CompassAnalytics /home/rpmadmin/mount cifs rw,vers=3.0,sec=ntlm,cache=strict,username=fencrypt,domain=ROUNDPOINT,password=Test123*,uid=0,noforceuid,gid=0,noforcegid,addr=10.140.4.22,file_mode=0777,dir_mode=0777,nounix,serverino,mapposix,rsize=61440,wsize=65536,echo_interval=60,actimeo=1 0 0
   ```
 - fstab entry using UUID 
   ``` 
