@@ -44,8 +44,15 @@
 - [[Youtube and Media]]
 - [[Apt Repo]]
 - [[journalctl]]
+- Ansible Note (temporary. This will have it's own page)
+	- Hostkey checking - usually a remote server will have it's fingerprint registered in known_hosts file. This confirms the connection is made from a legitimate source. This is a safeguard against MIM attacks but does not prevent the connection to be established but leaves a trace in known_hosts.
+	- Ansible may run into an issue on instances where the remote machine has been reinstalled and the fingerprint has changed. to circumvent this issue we may add the parameter below on ansible.cfg 
+	  ``` 
+	  [defaults]
+	  host_key_checking = False
+	  ```
 - Inode (check inode limit if unable to write file to directory) 
-  ``` 
+  ```
   # check block device inode
   > df -i
   Filesystem       Inodes  IUsed    IFree IUse% Mounted on
@@ -72,7 +79,6 @@
   21933485  docker
   19042586  Documents
   19042583  Downloads
-  
   ```
 - Confirm MTU size 
   ``` 
