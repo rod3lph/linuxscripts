@@ -61,6 +61,9 @@
   tmpfs            405789    267   405522    1% /run/user/1000
   
   # show inodes used by directory
+  > ls -id /home/rodel
+  19042561 /home/rodel
+  
   > ls -i /home/rodel
   19097409 '2023-12-07 12-33-02.mkv'
   20232331  apps
@@ -69,6 +72,7 @@
   21933485  docker
   19042586  Documents
   19042583  Downloads
+  
   ```
 - Confirm MTU size 
   ``` 
