@@ -51,7 +51,7 @@
 	  [defaults]
 	  host_key_checking = False
 	  ```
-- Inode (check inode limit if unable to write file to directory) 
+- Inode (check inode limit if unable to write file to directory `ENOSPC` Disk full error) 
   ```
   # check block device inode
   > df -i
@@ -80,6 +80,10 @@
   19042586  Documents
   19042583  Downloads
   ```
+	- Nifty trick: create empty files and use up all available inodes (try only on a vm) (To Verify: if I mount this "filled" disk on another VM), should result to `ENOSPC` ("No space left on device")
+	  ``` 
+	  n=0; while :; do touch $n; let n=n+1; done
+
 - Confirm MTU size 
   ``` 
   ping 192.168.200.24 -c 2 -M do -s $((1500-28))
