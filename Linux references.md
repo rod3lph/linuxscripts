@@ -27,17 +27,49 @@
 - [[Clone linux users to another linux box]]
 - [[Login banner]]
 - [[SSH Cert Auth]]
+- [[SSH Key Authentication]]
 - [[SSH Home Folder Jail]]
 - [[Sample script to make/remove user accounts]]
 - [[Fail2ban]]
 - [[Firewalld]]
 - [[Cloudflare]]
 - [[Security]]
+- [[Linux User Administration]]
 - [[dietpi]]
 - [[Nextcloud]]
 - [[Simple router]]
 - [[Simple Server]]
+- [[Replicating Folders]]
 - [[etc-network-interfaces]]
+- [[Youtube and Media]]
+- [[Apt Repo]]
+- [[journalctl]]
+- Inode (check inode limit if unable to write file to directory) 
+  ``` 
+  # check block device inode
+  > df -i
+  Filesystem       Inodes  IUsed    IFree IUse% Mounted on
+  tmpfs           2028949   1606  2027343    1% /run
+  efivarfs              0      0        0     - /sys/firmware/efi/efivars
+  /dev/sdb2      15630336 895512 14734824    6% /
+  tmpfs           2028949   1099  2027850    1% /dev/shm
+  tmpfs           2028949      6  2028943    1% /run/lock
+  tmpfs           2028949      1  2028948    1% /run/qemu
+  /dev/sdb1             0      0        0     - /boot/efi
+  /dev/sdb3       7815168  68623  7746545    1% /persist
+  /dev/sdb5      23483088 570737 22912351    3% /home
+  tmpfs            405789    267   405522    1% /run/user/1000
+  
+  # show inodes used by directory
+  > ls -i /home/rodel
+  19097409 '2023-12-07 12-33-02.mkv'
+  20232331  apps
+  19101365  cgrun
+  19042582  Desktop
+  21933485  docker
+  19042586  Documents
+  19042583  Downloads
+  ```
 - Confirm MTU size 
   ``` 
   ping 192.168.200.24 -c 2 -M do -s $((1500-28))
@@ -187,7 +219,7 @@
   ```
 - fstab entry for CIFS 
   ``` 
-  //awfsinf02pv/FileEncrypt/CompassAnalytics /home/rpmadmin/mount cifs rw,vers=3.0,sec=ntlm,cache=strict,username=fencrypt,domain=ROUNDPOINT,password=Test123*,uid=0,noforceuid,gid=0,noforcegid,addr=10.140.4.22,file_mode=0777,dir_mode=0777,nounix,serverino,mapposix,rsize=61440,wsize=65536,echo_interval=60,actimeo=1 0 0
+  //awfsinf02pv/FileEncrypt/CompassAnalytics /home/rpmadmin/mount cifs rw,vers=3.0,sec=ntlm,cache=strict,username=fencrypt,domain=ROUNDPOINT,password=MboS1603*,uid=0,noforceuid,gid=0,noforcegid,addr=10.140.4.22,file_mode=0777,dir_mode=0777,nounix,serverino,mapposix,rsize=61440,wsize=65536,echo_interval=60,actimeo=1 0 0
   ```
 - fstab entry using UUID 
   ``` 
